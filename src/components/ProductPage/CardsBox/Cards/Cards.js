@@ -1,4 +1,3 @@
-import image from "../../../../assets/pic.jpg";
 import React, { useState } from "react";
 import { makeStyles, Grid } from "@material-ui/core";
 import Card from "@material-ui/core/Card";
@@ -47,7 +46,7 @@ const Cards = () => {
               component="img"
               alt=""
               className={styles.image}
-              image={image}
+              // image={image}
             />
 
             {showComponent ? (

@@ -4,22 +4,20 @@ import Navbar from "./components/Navbar/Navbar";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
-import { Container } from "@material-ui/core";
 import CarouselPage from "./components/Carousel/Carousel";
 import MultiCarouselPage from "./components/Carousel/MultiCarouselPage";
 import CategoryCarousel from "./components/Carousel/CategoryCarousel/CategoryCarousel";
 import Cart from "./components/Cart/Cart";
-import { commerce } from "./lib/Commerce";
 import ProductPage from "./components/ProductPage/ProductPage";
 import Checkout from "./components/CheckoutForm/Checkout/Checkout.js";
 import Wishlist from "./components/Wishlist/Wishlist";
-import {BrowserRouter as Router,Switch,Route,  withRouter,  Redirect} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route, withRouter, Redirect} from "react-router-dom";
 import ProductDetail from "./components/ProductDetail/ProductDetail";
 import SignUp from "./components/SignUp/SignUp";
 import "./index.css";
 import { firebase, db } from "./firebase";
 import { connect } from "react-redux";
-import {  createCart,createWishlist,fetchProducts,fetchCartProd,fetchWishProd} from "./cartController/cartController";
+import { createCart, createWishlist, fetchProducts, fetchCartProd, fetchWishProd } from "./cartController/cartController";
 
 let globalUser;
 
@@ -289,15 +287,18 @@ const App = (props) => {
     </Router>
   );
 };
+
 const mapStateToProps = (state) => {
   return {
     auth: state.auth,
   };
 };
+
 const mapDispatchToProps = (dispatch) => {
   return {
     getUser: () => dispatch({ type: "GETUSER" }),
     updateUser: () => dispatch({ type: "SETUSER", user: globalUser }),
   };
 };
+
 export default connect(mapStateToProps, mapDispatchToProps)(App);

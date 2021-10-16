@@ -32,6 +32,7 @@ const createCart = (auth,setDocId) => {
       });
   }
 };
+
 const createWishlist = (auth,setWishId) => {
   if (auth) {
     db.collection("wishlist").where("consumerId","==",auth.uid).get()
@@ -60,6 +61,7 @@ const createWishlist = (auth,setWishId) => {
       });
   }
 };
+
 const fetchProducts = async (setProducts) => {
   db.collection("products")
     .get()
@@ -84,7 +86,6 @@ const fetchProducts = async (setProducts) => {
     });
 };
 
-
 const fetchCartProd = (product, cartItems,x,y,setPrice,setCart,setLoading,setPriceBool,priceBool) => {
   db.collection("products")
     .doc(product.product)
@@ -105,6 +106,7 @@ const fetchCartProd = (product, cartItems,x,y,setPrice,setCart,setLoading,setPri
       }
     });
 };
+
 const fetchWishProd = (product, wishItems,x,y,setWishlist) => {
   db.collection("products")
     .doc(product.product)
@@ -114,20 +116,12 @@ const fetchWishProd = (product, wishItems,x,y,setWishlist) => {
       data.productId=product.product;
       data.quantity = product.quantity;
       data.variations = product.variations;
-
-
       wishItems.push(data);
       if(x===y){
         setWishlist(wishItems);
       }
-
-
     });
 };
-
-
-
-
 
 export {
   createCart,

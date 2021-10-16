@@ -8,7 +8,6 @@ import Checkbox from "@material-ui/core/Checkbox";
 import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
-import logo from "../../assets/logo.png";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
@@ -196,7 +195,7 @@ const SignUp = (props) => {
   return (
     <Container component="main" maxWidth="xs" style={{ marginTop: "180px" }}>
       <div className={classes.paper}>
-        <img style={{ width: "50%" }} src={logo} />
+        {/* <img style={{ width: "50%" }} src={logo} /> */}
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>

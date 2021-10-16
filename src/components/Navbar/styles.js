@@ -1,4 +1,4 @@
-import { makeStyles, fade } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 
 const drawerWidth = 0;
 
@@ -47,6 +47,10 @@ export default makeStyles((theme) => ({
     display: "flex",
     flexFlow: "row",
   },
+  logoTextP: {
+    margin: "0",
+    color: "#ff5151",
+  },
   leadingText: {
     padding: "2px 1px 0 1px",
     margin: "0 15px",
@@ -87,16 +91,27 @@ export default makeStyles((theme) => ({
     padding: "12px 30px 12px 45px",
     width: "100%",
   },
+  navIconButton: {
+    paddingBottom: "8px",
+    "&:focus": {
+      outline: "none !important",
+    },
+    "&:hover": {
+      background: "none",
+    },
+  },
   navIcon: {
     margin: "auto",
-    color: "#777",
+    color: "#888",
   },
   navIconText: {
-    paddingTop: "1px",
-    color: "#fff",
+    color: "#555",
     fontSize: "11px",
     margin: "0",
     fontWeight: "500",
+  },
+  customBadge: {
+    backgroundColor: "#ff5151",
   },
   selected: {
     fontWeight: "400",

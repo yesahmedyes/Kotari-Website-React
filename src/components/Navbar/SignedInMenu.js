@@ -10,7 +10,7 @@ import {connect} from "react-redux";
 import useStyles from "./styles";
 
 
-const SignedInMenu=({ render, update,auth,setCart,setUser,setTotalWish,setTotalItems,setDocId,setWishId,setWishlist })=> {
+const SignedInMenu=({ render, update, auth, setCart, setUser, setTotalWish, setTotalItems, setDocId, setWishId, setWishlist })=> {
   const classes = useStyles();
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -22,9 +22,6 @@ const SignedInMenu=({ render, update,auth,setCart,setUser,setTotalWish,setTotalI
         if(anchorEl!==null){
             setAnchorEl(null);
         }
-
-
-
   };
 
   const open = Boolean(anchorEl);
