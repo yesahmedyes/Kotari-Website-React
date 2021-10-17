@@ -4,9 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
-import CarouselPage from "./components/Carousel/Carousel";
-import MultiCarouselPage from "./components/Carousel/MultiCarouselPage";
-import CategoryCarousel from "./components/Carousel/CategoryCarousel/CategoryCarousel";
+import Home from './components/Home/Home'
 import Cart from "./components/Cart/Cart";
 import ProductPage from "./components/ProductPage/ProductPage";
 import Checkout from "./components/CheckoutForm/Checkout/Checkout.js";
@@ -54,92 +52,95 @@ const App = (props) => {
         // The document probably doesn't exist.
         console.error("Error updating document: ", error);
       });
-  };
+    };
 
   const handleRemoveFromCart = async (productId) => {
-   db.collection("cart")
-     .doc(docId)
-     .collection("products")
-     .doc(productId)
-     .delete()
-     .then(() => {
-       fetchCart();
-       console.log("Document successfully deleted!");
-     })
-     .catch((error) => {
-       console.error("Error removing document: ", error);
-     });
- };
- const addAuthListener=()=>{
-   firebase.auth().onAuthStateChanged((user) => {
-     if (user!==null && (User===null || User.uid!==user.uid)) {
-       console.log("USER",user);
-       globalUser = user;
-       props.updateUser(user);
-       setUser(user);
-     } else if(user===null) {
-             firebase.auth().signInAnonymously();
-     }
-   });
- }
- const handleEmptyCart = async () => {
-   db.collection("cart")
-     .doc(docId)
-     .delete()
-     .then(() => {
-       setCart([]);
-       setTotalItems(0);
-     })
-     .catch((error) => {
-       console.error("Error removing document: ", error);
-     });
- };
+    db.collection("cart")
+      .doc(docId)
+      .collection("products")
+      .doc(productId)
+      .delete()
+      .then(() => {
+        fetchCart();
+        console.log("Document successfully deleted!");
+      })
+      .catch((error) => {
+        console.error("Error removing document: ", error);
+      });
+  };
 
- const fetchCart = async () => {
-   console.log("FETCHING");
-   if (docId) {
-     db.collection("cart")
-       .doc(docId)
-       .collection("products")
-       .get()
-       .then((querySnapshot) => {
-         const data = querySnapshot.docs.map((doc) => doc.data());
-         setTotalItems(data.length);
-         if (data.length === 0) {
-           setCart([]);
-           setLoading(false);
-           return;
-         }
-         let cartItems = [];
-         data.forEach(async (product, index) => {
-           await fetchCartProd(product, cartItems, data.length - 1, index,setPrice,setCart,setLoading,setPriceBool,priceBool);
-         });
-       });
-   } else {
-   }
- };
- const fetchWishlist = async () => {
-   if (wishId) {
-     db.collection("wishlist")
-       .doc(wishId)
-       .collection("products")
-       .get()
-       .then((querySnapshot) => {
-         const data = querySnapshot.docs.map((doc) => doc.data());
-         setTotalWish(data.length);
-         if (data.length === 0) {
-           setWishlist([]);
-             return;
-         }
-         let wishItems = [];
-         data.forEach(async (product,index) => {
-           await fetchWishProd(product, wishItems,data.length-1,index,setWishlist);
-         });
+  const addAuthListener=()=>{
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user!==null && (User===null || User.uid!==user.uid)) {
+        console.log("USER",user);
+        globalUser = user;
+        props.updateUser(user);
+        setUser(user);
+      } else if(user===null) {
+              firebase.auth().signInAnonymously();
+      }
+    });
+  }
+
+  const handleEmptyCart = async () => {
+    db.collection("cart")
+      .doc(docId)
+      .delete()
+      .then(() => {
+        setCart([]);
+        setTotalItems(0);
+      })
+      .catch((error) => {
+        console.error("Error removing document: ", error);
+      });
+  };
+
+  const fetchCart = async () => {
+    console.log("FETCHING");
+    if (docId) {
+      db.collection("cart")
+        .doc(docId)
+        .collection("products")
+        .get()
+        .then((querySnapshot) => {
+          const data = querySnapshot.docs.map((doc) => doc.data());
+          setTotalItems(data.length);
+          if (data.length === 0) {
+            setCart([]);
+            setLoading(false);
+            return;
+          }
+          let cartItems = [];
+          data.forEach(async (product, index) => {
+            await fetchCartProd(product, cartItems, data.length - 1, index,setPrice,setCart,setLoading,setPriceBool,priceBool);
+          });
+        });
+    } else {
+    }
+  };
+
+  const fetchWishlist = async () => {
+    if (wishId) {
+      db.collection("wishlist")
+        .doc(wishId)
+        .collection("products")
+        .get()
+        .then((querySnapshot) => {
+          const data = querySnapshot.docs.map((doc) => doc.data());
+          setTotalWish(data.length);
+          if (data.length === 0) {
+            setWishlist([]);
+              return;
+          }
+          let wishItems = [];
+          data.forEach(async (product,index) => {
+            await fetchWishProd(product, wishItems,data.length-1,index,setWishlist);
+          });
 
 
-       });
-   }
- };
+        });
+    }
+  };
 
   useEffect(() => {
     addAuthListener();
@@ -172,46 +173,7 @@ const App = (props) => {
         <div style={{ marginTop: "60px" }} />
         <Switch>
           <Route exact path="/">
-            <div
-              style={{
-                maxWidth: "1300px",
-                textAlign: "center",
-                margin: "auto",
-              }}
-            >
-              <CarouselPage />
-              <div
-                style={{
-                  display: "flex",
-                  marginLeft: "4.5%",
-                  marginTop: "3%",
-                  marginBottom: "2%",
-                }}
-              >
-                <h3 style={{ textAlign: "left", flexGrow: "11" }}>
-                  Trending Categories
-                </h3>
-                <h6 style={{ flexGrow: "3", color: "#C46224" }}>See all</h6>
-              </div>
-              <CategoryCarousel />
-
-              <div
-                style={{
-                  display: "flex",
-                  marginLeft: "3%",
-                  marginTop: "5%",
-                  marginBottom: "2%",
-                }}
-              >
-                <h3 style={{ textAlign: "left", flexGrow: "19" }}>
-                  Trending Brands
-                </h3>
-                <h6 style={{ flexGrow: "3", color: "#C46224" }}>See all</h6>
-              </div>
-              <MultiCarouselPage />
-              <Products products={products} />
-
-            </div>
+            <Home/>
           </Route>
 
           <Route exact path="/cart">
