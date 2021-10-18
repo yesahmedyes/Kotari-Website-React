@@ -1,6 +1,8 @@
 import React from "react";
 import useStyles from './styles';
-import { Container } from "@material-ui/core";
+import { Container, InputBase } from "@material-ui/core";
+import SearchIcon from "@material-ui/icons/Search";
+import CustomCarousel from "./Carousel";
 import santa from "../../assets/santa.jpg";
 
 const Home = () => {
@@ -12,8 +14,22 @@ const Home = () => {
             <div style={{paddingTop: "50px", width: "100%", backgroundColor: "#1a5b8f"}}>
                 <img src={santa} style={{display: "block", maxHeight: "350px", margin: "auto"}}></img>
             </div>
-            <Container style={{paddingTop: "30px"}}>
-                <p>Hello World</p>
+            <div className={classes.search}>
+                <div>
+                    <SearchIcon className={classes.searchIcon} />
+                </div>
+                <InputBase
+                placeholder="Search for products and shops"
+                classes={{
+                    root: classes.inputRoot,
+                    input: classes.inputInput,
+                }}
+                inputProps={{ "aria-label": "search" }}
+                fullWidth="true"
+                />
+            </div>
+            <Container style={{marginTop: "40px", marginBottom: "200px"}}>
+                <CustomCarousel/>
             </Container>
         </>
     );
