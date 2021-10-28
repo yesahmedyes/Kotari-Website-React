@@ -30,4 +30,24 @@ export default makeStyles((theme) => ({
         padding: "20px 25px 20px 55px",
         width: "100%",
     },
+    promoCard: {
+        width: "100%",
+        background: "linear-gradient(to right, #86DEF6, #BEECFB)",
+        borderRadius: "10px", 
+    },
+    promoText: {
+        textAlign: "center",
+        padding: "23px",
+        fontWeight: "500",
+        fontSize: "18px",
+    },
+    promoImageDiv: {
+        width: "100%",
+        display: "flex",
+        justifyContent: "center",
+    },
+    promoImage: {
+        width: "75%",
+        margin: "auto",
+    },
 }));	

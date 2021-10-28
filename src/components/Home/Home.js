@@ -3,6 +3,7 @@ import useStyles from './styles';
 import { Container, InputBase } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 import CustomCarousel from "./Carousel";
+import Verified from "./Verified";
 import santa from "../../assets/santa.jpg";
 
 const Home = () => {
@@ -28,8 +29,9 @@ const Home = () => {
                 fullWidth="true"
                 />
             </div>
-            <Container style={{marginTop: "40px", marginBottom: "200px"}}>
+            <Container style={{marginTop: "40px", marginBottom: "500px"}}>
                 <CustomCarousel/>
+                <Verified/>
             </Container>
         </>
     );
