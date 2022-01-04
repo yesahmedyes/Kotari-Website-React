@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   Button,
-  Grid,
   Card,
   CardMedia,
   CardContent,
@@ -11,7 +10,7 @@ import { Link, Redirect } from "react-router-dom";
 import FavoriteBorderOutlinedIcon from "@material-ui/icons/FavoriteBorderOutlined";
 import useStyles from "./styles";
 
-const Product = ({ product, addToCart, id }) => {
+const Product = ({ product, id }) => {
   const classes = useStyles();
   let path = "/product/" + id;
   const discount = ((1 - product.price / product.orignalPrice) * 100).toFixed(
@@ -31,8 +30,6 @@ const Product = ({ product, addToCart, id }) => {
   };
 
   return (
-    <>
-      <Grid item md={3} style={{ margin: "20px" }}>
         <Card
           className={classes.cardContainer}
           onMouseEnter={handleToggleHoverIn}
@@ -61,7 +58,7 @@ const Product = ({ product, addToCart, id }) => {
                 </Fade>
               </div>
               <CardContent className={classes.cardContent}>
-                <div className="text-2-bold">
+                <div className="text-2-bold" style={{textAlign: "center"}}>
                   {product.name.substring(0, 25)}
                   {product.name.length > 25 ? "..." : ""}
                 </div>
@@ -82,8 +79,6 @@ const Product = ({ product, addToCart, id }) => {
             </div>
           </Button>
         </Card>
-      </Grid>
-    </>
   );
 };
 

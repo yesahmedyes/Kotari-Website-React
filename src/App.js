@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Products from "./components/products/Products";
 import Navbar from "./components/Navbar/Navbar";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
@@ -32,7 +31,6 @@ const App = (props) => {
   const [logOff, setLogOff] = useState(true);
   const [priceBool, setPriceBool] = useState(false);
   const [docId, setDocId] = useState(null);
-
   const [wishId, setWishId] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
 
@@ -136,8 +134,6 @@ const App = (props) => {
           data.forEach(async (product,index) => {
             await fetchWishProd(product, wishItems,data.length-1,index,setWishlist);
           });
-
-
         });
     }
   };
@@ -146,13 +142,16 @@ const App = (props) => {
     addAuthListener();
     fetchProducts(setProducts);
   }, []);
+
   useEffect(() => {
     createCart(props.auth,setDocId);
     createWishlist(props.auth,setWishId);
   }, [props.auth]);
+
   useEffect(() => {
     fetchCart();
   }, [docId, User]);
+
   useEffect(() => {
     fetchWishlist();
   }, [wishId, User]);
@@ -171,6 +170,7 @@ const App = (props) => {
           setUser={setUser}
         />
         <div style={{ marginTop: "60px" }} />
+  
         <Switch>
           <Route exact path="/">
             <Home/>
@@ -190,6 +190,7 @@ const App = (props) => {
               docId={docId}
             />
           </Route>
+  
           <Route exact path="/wishlist">
             <Wishlist
               wishList={wishlist}
@@ -200,6 +201,7 @@ const App = (props) => {
               setTotalWish={setTotalWish}
             />
           </Route>
+
           <Route exact path="/checkout">
             <Checkout
               order={order}
@@ -207,6 +209,7 @@ const App = (props) => {
               error={errorMessage}
             />
           </Route>
+
           <Route
             path="/product/:id"
             render={(props) => (
@@ -238,12 +241,14 @@ const App = (props) => {
               )
             ) : null}
           </Route>
+
           <Route
             path="/products"
             render={(props) => (
-              <ProductPage searchProducts={products} />
+              <ProductPage products={products} />
             )}
           />
+
         </Switch>
       </div>
     </Router>

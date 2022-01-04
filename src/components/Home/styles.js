@@ -1,6 +1,26 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
+    mainDiv: {
+        width: "100%",
+        backgroundColor: "#FE507E",
+    },
+    main: {
+        height: "400px",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        backgroundSize: "contain",
+    },
+    mainText: {
+        color: "#fff",
+        fontWeight: "500",
+        letterSpacing: "0.4px",
+        fontSize: "1.4rem",
+        margin: "auto",
+        textAlign: "center", 
+        position: "relative",
+        top: "47%",
+    },
     search: {
         position: "relative",
         top: "-27px",

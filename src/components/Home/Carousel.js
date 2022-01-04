@@ -7,7 +7,13 @@ const CustomCarousel = () => {
 
     var items = [
         {
-            image: "https://firebasestorage.googleapis.com/v0/b/kotari-37bf9.appspot.com/o/featured_images%2F200421_pak_web_hp_hb_onsitemonetization_unilever_ramadan_en_.png?alt=media&token=e6be0d00-5263-489d-acc0-3753b07d55b4",
+            image: "https://firebasestorage.googleapis.com/v0/b/kotari-37bf9.appspot.com/o/featured_images%2F190421_pak_web_hp_hb_onsite_mychoice_en_%402x.jpg?alt=media&token=84c44332-7344-4601-a093-73d0eb8ce84e",
+        },
+        {
+            image: "https://cdnprod.mafretailproxy.com/sys-master-root/hbd/h4d/14916572839966/06092021_pak_web_hp_hb_onsite_easypaisa_en@2x.jpg",
+        },
+        {
+            image: "https://cdnprod.mafretailproxy.com/sys-master-root/h2c/hff/15695649898526/07102021_pak_web_hp_hb_onsite_c4now_en@2x.jpg",
         },
     ];
 

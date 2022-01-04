@@ -4,7 +4,7 @@ import { Container, InputBase } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 import CustomCarousel from "./Carousel";
 import Verified from "./Verified";
-import santa from "../../assets/santa.jpg";
+import bgImage from "../../assets/bg.jpg";
 
 const Home = () => {
 
@@ -12,8 +12,10 @@ const Home = () => {
 
     return (
         <>
-            <div style={{paddingTop: "50px", width: "100%", backgroundColor: "#1a5b8f"}}>
-                <img src={santa} style={{display: "block", maxHeight: "350px", margin: "auto"}}></img>
+            <div className={classes.mainDiv}>
+                <div style={{backgroundImage: `url(${bgImage})`}} className={classes.main}>
+                    <h4 className={classes.mainText}>We deliver verified products from verified sellers</h4>
+                </div>
             </div>
             <div className={classes.search}>
                 <div>

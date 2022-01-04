@@ -1,20 +1,30 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
-import Product from "../products/product/Product";
-import ProductSection from "./ProductSection/ProductSection";
-import { useLocation } from "react-router-dom";
+import Product from "./Product/Product";
+import { Container, Grid } from "@material-ui/core";
 
 const ProductPage = (props) => {
-   const location = useLocation();
-   console.log(location);
+
+  const { products } = props;
+
   return (
-    <>
-    <div style={{marginTop:"10%"}}>
-    </div>
-      <h1>Hello World</h1>
-      {/* work to be done */}
-      {/* <ProductSection searchResults={location.state.searchResults} /> */}
-    </>
-  );
+    <Container style={{padding: "70px 0"}}>
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={4} md={3}>Filters</Grid>
+        <Grid item xs={12} sm={8} md={9}>
+          <Grid container spacing={4}>
+            {Object.entries(products).map(([productId, productData]) => {
+              return(
+                <Grid item xs={12} sm={4} md={4}>
+                  <Product product={productData} id={productId} />  
+                </Grid>
+              )
+            })}
+          </Grid>
+        </Grid>
+      </Grid>
+    </Container>
+  )
+
 };
+
 export default ProductPage;
