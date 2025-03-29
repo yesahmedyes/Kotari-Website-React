@@ -3,7 +3,7 @@
 A modern, feature-rich e-commerce website built with React and Firebase, offering a seamless shopping experience with a beautiful Material-UI based interface.
 
 <div align="center">
-  <img src="./images/main.png" alt="Kotari Homepage" width="100%">
+  <img src="./images/1.png" alt="Homepage" width="100%">
 </div>
 
 ## Features
@@ -39,12 +39,12 @@ A modern, feature-rich e-commerce website built with React and Firebase, offerin
 - Persistent storage for user preferences
 
 <div align="center">
-  <img src="./images/products.png" alt="Product Catalog" width="100%">
+  <img src="./images/2.png" alt="Products" width="100%">
   <p><em>Product Catalog with Advanced Filtering and Search</em></p>
 </div>
 
 <div align="center">
-  <img src="./images/product-details.png" alt="Product Details" width="100%">
+  <img src="./images/3.png" alt="Product Details" width="100%">
   <p><em>Detailed Product View with Rich Information</em></p>
 </div>
 
@@ -73,9 +73,3 @@ A modern, feature-rich e-commerce website built with React and Firebase, offerin
 - algoliasearch - Search functionality
 - react-router-dom - Routing
 - styled-components - Styling
-
-![Main Page](./images/main.png)
-
-![Product Page](./images/products.png)
-
-![Product Details Page](./images/product-details.png)
