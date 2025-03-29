@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# Kotari E-commerce Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, feature-rich e-commerce website built with React and Firebase, offering a seamless shopping experience with a beautiful Material-UI based interface.
 
-## Available Scripts
+<div align="center">
+  <img src="./images/main.png" alt="Kotari Homepage" width="100%">
+</div>
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+### Authentication and User Management
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Secure user authentication powered by Firebase
+- User profile management
+- Protected routes for authenticated users
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Shopping Experience
 
-### `npm test`
+- Beautiful and responsive product catalog
+- Advanced product search powered by Algolia
+- Product categorization and filtering
+- Detailed product pages with rich information
+- Shopping cart functionality with real-time updates
+- Secure checkout process with Stripe integration
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### UI/UX Features
 
-### `npm run build`
+- Modern Material-UI components
+- Responsive design that works on all devices
+- Interactive carousels for featured products
+- Clean and intuitive navigation
+- Real-time feedback with toast notifications
+- Mobile-friendly interface
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### State Management
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Redux for global state management
+- Efficient cart state handling
+- Persistent storage for user preferences
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<div align="center">
+  <img src="./images/products.png" alt="Product Catalog" width="100%">
+  <p><em>Product Catalog with Advanced Filtering and Search</em></p>
+</div>
 
-### `npm run eject`
+<div align="center">
+  <img src="./images/product-details.png" alt="Product Details" width="100%">
+  <p><em>Detailed Product View with Rich Information</em></p>
+</div>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Technical Stack
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Frontend
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- React 17.x
+- Material-UI 4.x/5.x for components
+- Redux for state management
+- React Router for navigation
+- Styled Components for custom styling
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Backend & Services
 
-## Learn More
+- Firebase for authentication and backend services
+- Stripe for payment processing
+- Algolia for search functionality
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Key Dependencies
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- @mui/material & @mui/icons-material - UI components
+- firebase - Backend services
+- react-redux - State management
+- @stripe/stripe-js - Payment processing
+- algoliasearch - Search functionality
+- react-router-dom - Routing
+- styled-components - Styling
 
-### Code Splitting
+![Main Page](./images/main.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![Product Page](./images/products.png)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Product Details Page](./images/product-details.png)
